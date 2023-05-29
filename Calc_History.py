@@ -36,16 +36,21 @@ while True:
 
         if choice == '1':
             print(num1, "+", num2, "=", Addition.add(num1, num2))
+            lst.append([num1,'+',num2,Addition.add(num1, num2)])
 
         elif choice == '2':
             print(num1, "-", num2, "=", Subtraction.subtract(num1, num2))
+            lst.append([num1,'-',num2,Subtraction.subtract(num1, num2)])
 
         elif choice == '3':
             print(num1, "*", num2, "=", Multiplication.multiply(num1, num2))
+            lst.append([num1,'*',num2,Multiplication.multiply(num1, num2)])
 
         elif choice == '4':
             try:
                 print(num1, "/", num2, "=", Division.divide(num1, num2))
+                lst.append([num1,'/',num2,Division.divide(num1, num2)])
+                
             except ZeroDivisionError:
                 print("ZeroDivisionError! Please ensure second number is not 0")
         
