@@ -68,10 +68,15 @@ while True:
             continue
         if choice == '6':
             print("Square of", num, "=", square.square(num))
+            lst.append([num,'**',2,square.square(num)])
+            
         elif choice == '7':
             print("Square root of", num, "=", sqrt.sqrt(num))
+            lst.append([num,'**','1/2',sqrt.sqrt(num)])
+            
         elif choice == '8':
             print("Factorial of", num, "=", factorial.fact(num))
+            lst.append([num,'!','--',factorial.fact(num)])
             
         # check if user wants another calculation
         # break the while loop if answer is no
@@ -82,8 +87,9 @@ while True:
     elif choice == "5":
         try:
             num=float(input("Enter base: "))
-            pow=float(input("Enter power: "))
-            print(num, "raised to the power", pow, "=", power.power(num,pow))
+            powe=float(input("Enter power: "))
+            print(num, "raised to the power", pow, "=", power.power(num,powe))
+            lst.append([num,'**',powe,power.power(num,powe)])
         except ValueError:
             print("Invalid input. Please enter a number.")
             continue
