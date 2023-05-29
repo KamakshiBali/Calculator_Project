@@ -7,7 +7,6 @@ import power
 import square
 import sqrt
 import factorial
-import math
 
 # This is to present a menu to the user
 print("Select operation.")
