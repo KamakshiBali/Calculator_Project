@@ -7,6 +7,7 @@ import power
 import square
 import sqrt
 import factorial
+import pandas as pd
 
 # This is to present a menu to the user
 print("Select operation.")
@@ -19,7 +20,7 @@ print("6.Square")
 print("7.Square root")
 print("8.Factorial")
 
-
+lst=[]
 while True:
     # take input from the user
     choice = input("Enter choice(1/2/3/4/5/6/7/8): ")
