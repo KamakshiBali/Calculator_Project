@@ -7,7 +7,7 @@ import power
 import square
 import sqrt
 import factorial
-
+import pandas as pd
 
 # This is to present a menu to the user
 print("Select operation.")
