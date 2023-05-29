@@ -80,8 +80,8 @@ while True:
             lst.append([num,'**','1/2',sqrt.sqrt(num)])
             
         elif choice == '8':
-            print("Factorial of", num, "=", factorial.fact(num))
-            lst.append([num,'!','--',factorial.fact(num)])
+            print("Factorial of", int(num), "=", factorial.fact(int(num)))
+            lst.append([num,'!','--',factorial.fact(int(num))])
             
         # check if user wants another calculation
         # break the while loop if answer is no
