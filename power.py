@@ -1,3 +1,4 @@
-
+import math
 def power(a,b):
-    return a**b
+    x= math.power(a**b)
+    return x
