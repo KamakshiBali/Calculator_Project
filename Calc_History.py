@@ -50,7 +50,6 @@ while True:
             try:
                 print(num1, "/", num2, "=", Division.divide(num1, num2))
                 lst.append([num1,'/',num2,Division.divide(num1, num2)])
-                
             except ZeroDivisionError:
                 print("ZeroDivisionError! Please ensure second number is not 0")
         
@@ -58,7 +57,13 @@ while True:
         # break the while loop if answer is no
         next_calculation = input("Let's do next calculation? (yes/no): ")
         if next_calculation == "no":
-          break
+          hist=input("Enter yes to see calculator history, no to quit program: ")
+          if hist =='yes':
+              df = pd.DataFrame(lst,columns=['Num1','Operation','Num2','Result'])
+              print(df)
+              break
+          else:
+              break
       
     elif choice in ('6','7','8'):
         try:
@@ -82,21 +87,32 @@ while True:
         # break the while loop if answer is no
         next_calculation = input("Let's do next calculation? (yes/no): ")
         if next_calculation == "no":
-          break
+          hist=input("Enter yes to see calculator history, no to quit program: ")
+          if hist =='yes':
+              df = pd.DataFrame(lst,columns=['Num1','Operation','Num2','Result'])
+              print(df)
+              break
+          else:
+              break
       
     elif choice == "5":
         try:
-            num=float(input("Enter base: "))
-            powe=float(input("Enter power: "))
-            print(num, "raised to the power", pow, "=", power.power(num,powe))
+            num=int(input("Enter base: "))
+            powe=int(input("Enter power: "))
+            print(num, "raised to the power", powe, "=", power.power(num,powe))
             lst.append([num,'**',powe,power.power(num,powe)])
+            
         except ValueError:
             print("Invalid input. Please enter a number.")
             continue
         next_calculation = input("Let's do next calculation? (yes/no): ")
         if next_calculation == "no":
-          break
+          hist=input("Enter yes to see calculator history, no to quit program: ")
+          if hist =='yes':
+              df = pd.DataFrame(lst,columns=['Num1','Operation','Num2','Result'])
+              print(df)
+              break
+          else:
+              break
     else:
         print("Invalid Input")
-
-
