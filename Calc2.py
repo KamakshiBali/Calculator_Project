@@ -3,6 +3,11 @@ import Addition
 import Subtraction
 import Multiplication
 import Division
+import power
+import square
+import sqrt
+import factorial
+
 
 # This is to present a menu to the user
 print("Select operation.")
@@ -10,10 +15,15 @@ print("1.Addition")
 print("2.Subtract")
 print("3.Multiply")
 print("4.Divide")
+print("5.Power")
+print("6.Square")
+print("7.Square root")
+print("8.Factorial")
 
+lst=[]
 while True:
     # take input from the user
-    choice = input("Enter choice(1/2/3/4): ")
+    choice = input("Enter choice(1/2/3/4/5/6/7/8): ")
 
     # check if choice is one of the four options
     if choice in ('1', '2', '3', '4'):
@@ -41,6 +51,37 @@ while True:
         
         # check if user wants another calculation
         # break the while loop if answer is no
+        next_calculation = input("Let's do next calculation? (yes/no): ")
+        if next_calculation == "no":
+          break
+      
+    elif choice in ('6','7','8'):
+        try:
+            num=float(input("Enter number: "))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+        if choice == '6':
+            print("Square of", num, "=", square.square(num))
+        elif choice == '7':
+            print("Square root of", num, "=", sqrt.sqrt(num))
+        elif choice == '8':
+            print("Factorial of", num, "=", factorial.fact(num))
+            
+        # check if user wants another calculation
+        # break the while loop if answer is no
+        next_calculation = input("Let's do next calculation? (yes/no): ")
+        if next_calculation == "no":
+          break
+      
+    elif choice == "5":
+        try:
+            num=float(input("Enter base: "))
+            pow=float(input("Enter power: "))
+            print(num, "raised to the power", pow, "=", power.power(num,pow))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
         next_calculation = input("Let's do next calculation? (yes/no): ")
         if next_calculation == "no":
           break
